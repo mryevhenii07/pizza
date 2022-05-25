@@ -68,7 +68,7 @@ function App() {
             src="https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg"
             alt="Pizza"
           />
-          <h4 class="pizza-block__title">Чизбургер-пицца</h4>
+          <h4 class="pizza-block__title">Чизбургер-пица</h4>
           <div class="pizza-block__selector">
             <ul>
               <li class="active">тонкое</li>
