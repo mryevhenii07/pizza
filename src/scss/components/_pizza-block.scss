@@ -11,12 +11,16 @@
   text-align: center;
   margin-bottom: 65px;
 
-  &:not(:nth-of-type(4n)) {
-    margin-right: 35px;
+  &-wrap {
+    display: flex;
+    justify-content: center;
   }
 
   &__image {
     width: 260px;
+  }
+  &__image:hover {
+    transform: scale(1.1);
   }
 
   &__title {
@@ -24,6 +28,7 @@
     font-weight: 900;
     letter-spacing: 1%;
     margin-bottom: 20px;
+    margin-top: 10px;
   }
 
   &__selector {

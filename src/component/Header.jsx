@@ -12,7 +12,7 @@ const Header = () => {
             <img width="40" height="40" src={logo} alt="Pizza logo" />
             <div>
               <h1>React Pizza</h1>
-              <p>найсмачніша піца у всесвіті</p>
+              <p className="paragraf-logo">найсмачніша піца у всесвіті</p>
             </div>
           </div>
         </Link>

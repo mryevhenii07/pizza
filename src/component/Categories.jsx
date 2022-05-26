@@ -4,12 +4,12 @@ import { nanoid } from "nanoid";
 const Categories = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const categories = [
-    "Все",
-    "Мясные",
-    "Вегетарианская",
+    "Всі",
+    "М'ясні",
+    "Вегетаріанська",
     "Гриль",
-    "Острые",
-    "Закрытые",
+    "Гострі",
+    "Закриті",
   ];
 
   const onClickAct = (inx) => {

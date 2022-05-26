@@ -4,7 +4,7 @@ import { nanoid } from "nanoid";
 const Sort = () => {
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState(0);
-  const lists = ["популярності", "ціні", "алфавіту"];
+  const lists = ["популярності", "ціной", "алфавітом"];
   const sortName = lists[selected];
 
   const onClickListItem = (inx) => {
@@ -27,7 +27,7 @@ const Sort = () => {
             fill="#2C2C2C"
           />
         </svg>
-        <b>Сортировка по:</b>
+        <b>Сортування за:</b>
         <span onClick={() => setOpen(!open)}>{sortName}</span>
       </div>
 

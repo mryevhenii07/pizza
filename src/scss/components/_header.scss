@@ -27,6 +27,9 @@
 
     p {
       color: #7b7b7b;
+      @media (max-width: 565px) {
+        display: none;
+      }
     }
   }
 }
