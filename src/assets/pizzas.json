@@ -1,0 +1,92 @@
+[
+  {
+    "id": 0,
+    "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/3a9785bc5ac145118403de7d22b70fd9_366x366.jpeg",
+    "title": "Margarita",
+    "types": [0, 1],
+    "sizes": [26, 30, 40],
+    "price": 130,
+    "category": 5,
+    "rating": 9
+  },
+  {
+    "id": 1,
+    "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/2ac448e39ba24623a33c1d8d50b69ef8_366x366.jpeg",
+    "title": "Jamaica",
+    "types": [0],
+    "sizes": [30, 40],
+    "price": 130,
+    "category": 5,
+    "rating": 8
+  },
+  {
+    "id": 2,
+    "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/a02280d5dd9342f7925538752be9b521_366x366.jpeg",
+    "title": "Summer",
+    "types": [0, 1],
+    "sizes": [26, 30, 40],
+    "price": 120,
+    "category": 5,
+    "rating": 10
+  },
+  {
+    "id": 3,
+    "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/bf3377af7cfe4962915668d14bb8d0f4_366x366.jpeg",
+    "title": "Four sisters",
+    "types": [0, 1],
+    "sizes": [26, 30, 40],
+    "price": 115,
+    "category": 5,
+    "rating": 8
+  },
+  {
+    "id": 4,
+    "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/952259c12c3b4c009320a36c4b45a8e1_366x366.jpeg",
+    "title": "Firminaya",
+    "types": [0],
+    "sizes": [26, 30, 40],
+    "price": 170,
+    "category": 5,
+    "rating": 9
+  },
+  {
+    "id": 5,
+    "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/aa845b6e841241fbbff1a770b3ad3103_366x366.jpeg",
+    "title": "Bananas",
+    "types": [1],
+    "sizes": [30, 40],
+    "price": 95,
+    "category": 5,
+    "rating": 9
+  },
+  {
+    "id": 6,
+    "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/eb6d128bbcd340e98fd4f14b377e769f_366x366.jpeg",
+    "title": "Apples",
+    "types": [0, 1],
+    "sizes": [26, 30, 40],
+    "price": 130,
+    "category": 5,
+    "rating": 7
+  },
+  {
+    "id": 7,
+    "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/5630c6ed3f394c7ba25e1ef79a67b7ee_366x366.jpeg",
+    "title": "Fruits",
+    "types": [0, 1],
+    "sizes": [30, 40],
+    "price": 120,
+    "category": 5,
+    "rating": 10
+  },
+  {
+    "id": 8,
+    "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/5bf1c77b3ff44f93bb01c840ab35b033_366x366.jpeg",
+    "title": "Firminna",
+    "types": [1],
+    "sizes": [26, 30, 40],
+    "price": 220,
+    "category": 5,
+    "rating": 10
+  }
+]
