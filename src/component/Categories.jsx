@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { nanoid } from "nanoid";
 
 const Categories = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -19,7 +20,7 @@ const Categories = () => {
       <ul>
         {categories.map((category, ind) => (
           <li
-            key={ind}
+            key={nanoid()}
             onClick={() => onClickAct(ind)}
             className={activeIndex === ind ? "active" : ""}
           >

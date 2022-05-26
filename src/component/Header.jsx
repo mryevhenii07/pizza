@@ -9,7 +9,7 @@ const Header = () => {
           <img width="40" height="40" src={logo} alt="Pizza logo" />
           <div>
             <h1>React Pizza</h1>
-            <p>самая вкусная пицца во вселенной</p>
+            <p>найсмачніша піца у всесвіті</p>
           </div>
         </div>
         <div className="header__cart">

@@ -4,7 +4,6 @@ import Sort from "./component/Sort";
 import Categories from "./component/Categories";
 import PizzaBlock from "./component/PizzaBlock";
 import pizzas from "./assets/pizzas.json";
-console.log(pizzas);
 
 function App() {
   return (
@@ -20,6 +19,7 @@ function App() {
           <div className="content__items">
             {pizzas.map(({ title, price, imageUrl, sizes, types, id }) => (
               <PizzaBlock
+                key={id}
                 title={title}
                 price={price}
                 imageUrl={imageUrl}
@@ -28,8 +28,6 @@ function App() {
                 id={id}
               />
             ))}
-
-            {/* <PizzaBlock title={'Gavai'} price={195} /> */}
           </div>
         </div>
       </div>
