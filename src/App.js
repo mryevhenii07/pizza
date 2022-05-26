@@ -1,49 +1,23 @@
-import { useState, useEffect } from "react";
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+
 import "./scss/app.scss";
 import Header from "./component/Header";
-import Sort from "./component/Sort";
-import Categories from "./component/Categories";
-import PizzaBlock from "./component/PizzaBlock/PizzaBlock";
-import Skeleton from "./component/PizzaBlock/Skeleton";
-// import pizzas from './assets/pizzas.json';
+import Home from "./pages/Home";
+import NotFound from "./pages/NotFound";
+import Cart from "./pages/Cart";
 
 function App() {
-  const [items, setItems] = useState([]);
-  const [isLoading, setIsLoading] = useState(true); //skeleton
-  useEffect(() => {
-    fetch("https://628f5e0d0e69410599db2da5.mockapi.io/items")
-      .then((response) => response.json())
-      .then((json) => {
-        setItems(json);
-        setIsLoading(false); //skeleton
-      });
-  }, []);
-
   return (
     <div className="wrapper">
       <Header />
       <div className="content">
         <div className="container">
-          <div className="content__top">
-            <Categories />
-            <Sort />
-          </div>
-          <h2 className="content__title">Всі піци</h2>
-          <div className="content__items">
-            {isLoading
-              ? [...new Array(6)].map((_, inx) => <Skeleton key={inx} />) //skeleton
-              : items.map(({ title, price, imageUrl, sizes, types, id }) => (
-                  <PizzaBlock
-                    key={id}
-                    title={title}
-                    price={price}
-                    imageUrl={imageUrl}
-                    sizes={sizes}
-                    types={types}
-                    id={id}
-                  />
-                ))}
-          </div>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
         </div>
       </div>
     </div>
