@@ -4,34 +4,36 @@ import Categories from "../component/Categories";
 import Sort from "../component/Sort";
 import PizzaBlock from "../component/PizzaBlock/PizzaBlock";
 import Skeleton from "../component/PizzaBlock/Skeleton";
+import Pagination from "../component/Pagination/Pagination";
 
-const Home = () => {
+const Home = ({ searchValue }) => {
+  console.log(searchValue);
   const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState(true); //skeleton
   const [sortType, setSortType] = useState({
     name: "популярності",
     sortProperty: "rating",
   });
+  const [currentPage, setCurrentPage] = useState(1); //pagination
   const [categoriesId, setCategoriesId] = useState(0);
-
-  console.log(sortType, categoriesId);
 
   useEffect(() => {
     setIsLoading(true); //skeleton for category
-
+    const API = "https://628f5e0d0e69410599db2da5.mockapi.io/items";
     const category = categoriesId > 0 ? `category=${categoriesId}` : "";
-    const order = sortType.sortProperty.includes("price") ? "asc" : "desc";
+    const order = sortType.sortProperty.includes("price") ? "asc" : "";
 
     fetch(
-      `https://628f5e0d0e69410599db2da5.mockapi.io/items?${category}&sortBy=${sortType.sortProperty}&order=${order}`
+      `${API}?search=${searchValue}&${category}&sortBy=${sortType.sortProperty}&order=${order}&page=${currentPage}&limit=4`
     )
       .then((response) => response.json())
       .then((json) => {
         setItems(json);
         setIsLoading(false); //skeleton
-      });
+      })
+      .catch((error) => console.error(error));
     window.scrollTo(0, 0);
-  }, [categoriesId, sortType]);
+  }, [categoriesId, sortType, searchValue, currentPage]); //skeleton pagination
 
   return (
     <div className="container">
@@ -46,7 +48,7 @@ const Home = () => {
       <h2 className="content__title">Всі піци</h2>
       <div className="content__items">
         {isLoading
-          ? [...new Array(6)].map((_, inx) => <Skeleton key={inx} />) //skeleton
+          ? [...new Array(4)].map((_, inx) => <Skeleton key={inx} />) //skeleton
           : items.map(({ title, price, imageUrl, sizes, types, id }) => (
               <PizzaBlock
                 key={id}
@@ -59,6 +61,7 @@ const Home = () => {
               />
             ))}
       </div>
+      <Pagination onChangeSort={(number) => setCurrentPage(number)} />
     </div>
   );
 };
