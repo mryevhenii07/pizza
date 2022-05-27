@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { nanoid } from "nanoid";
 
-const Categories = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
+const Categories = ({ setValue, value, onClickCategories }) => {
   const categories = [
     "Всі",
     "М'ясні",
@@ -12,17 +11,14 @@ const Categories = () => {
     "Закриті",
   ];
 
-  const onClickAct = (inx) => {
-    setActiveIndex(inx);
-  };
   return (
     <div className="categories">
       <ul>
-        {categories.map((category, ind) => (
+        {categories.map((category, index) => (
           <li
             key={nanoid()}
-            onClick={() => onClickAct(ind)}
-            className={activeIndex === ind ? "active" : ""}
+            onClick={() => onClickCategories(index)}
+            className={value === index ? "active" : ""}
           >
             {category}
           </li>

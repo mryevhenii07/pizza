@@ -1,14 +1,18 @@
 import { useState } from "react";
 import { nanoid } from "nanoid";
 
-const Sort = () => {
+const Sort = ({ onChangeSort, sortType }) => {
   const [open, setOpen] = useState(false);
-  const [selected, setSelected] = useState(0);
-  const lists = ["популярності", "ціной", "алфавітом"];
-  const sortName = lists[selected];
+
+  const lists = [
+    { name: "популярності", sortProperty: "rating" },
+    { name: "ціной", sortProperty: "price" },
+    { name: "алфавітом", sortProperty: "title" },
+  ];
+  // const sortName = lists[sortType].name;
 
   const onClickListItem = (inx) => {
-    setSelected(inx);
+    onChangeSort(inx);
     setOpen(false);
   };
 
@@ -28,7 +32,7 @@ const Sort = () => {
           />
         </svg>
         <b>Сортування за:</b>
-        <span onClick={() => setOpen(!open)}>{sortName}</span>
+        <span onClick={() => setOpen(!open)}>{sortType.name}</span>
       </div>
 
       {open && (
@@ -37,10 +41,12 @@ const Sort = () => {
             {lists.map((list, inx) => (
               <li
                 key={nanoid()}
-                onClick={() => onClickListItem(inx)}
-                className={selected === inx ? "active" : ""}
+                onClick={() => onClickListItem(list)}
+                className={
+                  sortType.sortProperty === list.sortProperty ? "active" : ""
+                }
               >
-                {list}
+                {list.name}
               </li>
             ))}
           </ul>

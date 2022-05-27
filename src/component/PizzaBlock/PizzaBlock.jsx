@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { nanoid } from "nanoid";
 
-const PizzaBlock = ({ title, price, imageUrl, sizes, types, id }) => {
+const PizzaBlock = ({ title, price, imageUrl, sizes, types }) => {
   const [typeActive, setTypeActive] = useState(0);
   const [sizeActive, setSizeActive] = useState(0);
   const typeName = ["тонке", "традиційне"];
