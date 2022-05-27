@@ -1,8 +1,10 @@
 /* eslint-disable jsx-a11y/alt-text */
-import React from "react";
+import { useContext } from "react";
 import s from "./Search.module.scss";
+import { SearchContext } from "../../App.js";
 
-const Search = ({ setSearchValue, searchValue }) => {
+const Search = () => {
+  const { searchValue, setSearchValue } = useContext(SearchContext);
   return (
     <div className={s.root}>
       <input
