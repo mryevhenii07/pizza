@@ -1,18 +1,23 @@
 import { useState } from "react";
 import { nanoid } from "nanoid";
+import { useSelector, useDispatch } from "react-redux";
 
-const Sort = ({ onChangeSort, sortType }) => {
+import { setSort } from "../component/Redux/slices/filterSlice";
+
+const Sort = () => {
   const [open, setOpen] = useState(false);
+
+  const dispatch = useDispatch();
+  const sort = useSelector((state) => state.filter.sort);
 
   const lists = [
     { name: "популярності", sortProperty: "rating" },
     { name: "ціной", sortProperty: "price" },
     { name: "алфавітом", sortProperty: "title" },
   ];
-  // const sortName = lists[sortType].name;
 
-  const onClickListItem = (inx) => {
-    onChangeSort(inx);
+  const onClickListItem = (list) => {
+    dispatch(setSort(list));
     setOpen(false);
   };
 
@@ -32,7 +37,7 @@ const Sort = ({ onChangeSort, sortType }) => {
           />
         </svg>
         <b>Сортування за:</b>
-        <span onClick={() => setOpen(!open)}>{sortType.name}</span>
+        <span onClick={() => setOpen(!open)}>{sort.name}</span>
       </div>
 
       {open && (
@@ -43,7 +48,7 @@ const Sort = ({ onChangeSort, sortType }) => {
                 key={nanoid()}
                 onClick={() => onClickListItem(list)}
                 className={
-                  sortType.sortProperty === list.sortProperty ? "active" : ""
+                  sort.sortProperty === list.sortProperty ? "active" : ""
                 }
               >
                 {list.name}

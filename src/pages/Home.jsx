@@ -1,6 +1,9 @@
 import { useState, useEffect, useContext } from "react";
-
+import { useSelector, useDispatch } from "react-redux";
 import { SearchContext } from "../App.js";
+
+import { setCategoryId } from "../component/Redux/slices/filterSlice";
+
 import Categories from "../component/Categories";
 import Sort from "../component/Sort";
 import PizzaBlock from "../component/PizzaBlock/PizzaBlock";
@@ -11,21 +14,25 @@ const Home = () => {
   const { searchValue } = useContext(SearchContext);
   const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState(true); //skeleton
-  const [sortType, setSortType] = useState({
-    name: "популярності",
-    sortProperty: "rating",
-  });
   const [currentPage, setCurrentPage] = useState(1); //pagination
-  const [categoriesId, setCategoriesId] = useState(0);
+
+  const dispatch = useDispatch();
+
+  const sortType = useSelector((state) => state.filter.sort.sortProperty);
+  const categoryId = useSelector((state) => state.filter.categoryId);
+
+  const onClickCategories = (id) => {
+    dispatch(setCategoryId(id));
+  };
 
   useEffect(() => {
     setIsLoading(true); //skeleton for category
     const API = "https://628f5e0d0e69410599db2da5.mockapi.io/items";
-    const category = categoriesId > 0 ? `category=${categoriesId}` : "";
-    const order = sortType.sortProperty.includes("price") ? "asc" : "";
+    const category = categoryId > 0 ? `category=${categoryId}` : "";
+    const order = sortType.includes("price") ? "asc" : "";
 
     fetch(
-      `${API}?search=${searchValue}&${category}&sortBy=${sortType.sortProperty}&order=${order}&page=${currentPage}&limit=4`
+      `${API}?search=${searchValue}&${category}&sortBy=${sortType}&order=${order}&page=${currentPage}&limit=4`
     )
       .then((response) => response.json())
       .then((json) => {
@@ -34,17 +41,17 @@ const Home = () => {
       })
       .catch((error) => console.error(error));
     window.scrollTo(0, 0);
-  }, [categoriesId, sortType, searchValue, currentPage]); //skeleton pagination
+  }, [categoryId, sortType, searchValue, currentPage]); //skeleton pagination
 
   return (
     <div className="container">
       <div className="content__top">
         <Categories
-          value={categoriesId}
-          setValue={setCategoriesId}
-          onClickCategories={(id) => setCategoriesId(id)}
+          value={categoryId}
+          setValue={setCategoryId}
+          onClickCategories={onClickCategories}
         />
-        <Sort sortType={sortType} onChangeSort={(id) => setSortType(id)} />
+        <Sort />
       </div>
       <h2 className="content__title">Всі піци</h2>
       <div className="content__items">
