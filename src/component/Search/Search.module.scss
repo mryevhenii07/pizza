@@ -2,18 +2,36 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 300px;
-  transition: all 0.2s ease-in-out;
+  // width: 300px;
+
   border: 1px solid rgb(230, 217, 217);
   border-radius: 18px;
 
+  @media (max-width: 690px) {
+    margin: 0 auto;
+    margin-top: 30px;
+  }
+
   .input {
-    width: 100%;
+    transition: all 0.4s ease-in-out;
+    width: 200px;
+    // width: 100%;
     padding: 12px 12px;
     border: none;
     outline: none;
     font-size: 16px;
+    &:focus {
+      width: 300px;
+    }
+
+    @media (max-width: 410px) {
+      width: 150px;
+      &:focus {
+        width: 250px;
+      }
+    }
   }
+
   .close {
     margin-right: 10px;
     cursor: pointer;

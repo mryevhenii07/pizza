@@ -1,4 +1,3 @@
-// import { useState } from "react";
 import { nanoid } from "nanoid";
 
 const Categories = ({ value, onClickCategories }) => {
