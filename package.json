@@ -2,7 +2,7 @@
   "name": "pizza",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://mryevhenii07.github.io/",
+  "homepage": "https://mryevhenii07.github.io/pizza",
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.2",
     "@testing-library/jest-dom": "^5.16.2",
