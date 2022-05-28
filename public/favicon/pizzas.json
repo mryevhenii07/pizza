@@ -1,0 +1,162 @@
+[
+  {
+    "id": 0,
+    "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/3a9785bc5ac145118403de7d22b70fd9_366x366.jpeg",
+    "title": "Маргарита",
+    "types": [0, 1],
+    "sizes": [26, 30, 40],
+    "price": 130,
+    "category": 2,
+    "rating": 9
+  },
+  {
+    "id": 1,
+    "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/2ac448e39ba24623a33c1d8d50b69ef8_366x366.jpeg",
+    "title": "Піца Чотири сезони",
+    "types": [0],
+    "sizes": [30, 40],
+    "price": 130,
+    "category": 1,
+    "rating": 8
+  },
+  {
+    "id": 2,
+    "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/a02280d5dd9342f7925538752be9b521_366x366.jpeg",
+    "title": "Вегетаріанська",
+    "types": [0, 1],
+    "sizes": [26, 30, 40],
+    "price": 120,
+    "category": 1,
+    "rating": 10
+  },
+  {
+    "id": 3,
+    "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/bf3377af7cfe4962915668d14bb8d0f4_366x366.jpeg",
+    "title": "Сімейна",
+    "types": [0, 1],
+    "sizes": [26, 30, 40],
+    "price": 115,
+    "category": 2,
+    "rating": 8
+  },
+  {
+    "id": 4,
+    "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/952259c12c3b4c009320a36c4b45a8e1_366x366.jpeg",
+    "title": "Дракон",
+    "types": [0],
+    "sizes": [26, 30, 40],
+    "price": 170,
+    "category": 3,
+    "rating": 9
+  },
+  {
+    "id": 5,
+    "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/aa845b6e841241fbbff1a770b3ad3103_366x366.jpeg",
+    "title": "Гавайська",
+    "types": [1],
+    "sizes": [30, 40],
+    "price": 95,
+    "category": 4,
+    "rating": 9
+  },
+  {
+    "id": 6,
+    "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/eb6d128bbcd340e98fd4f14b377e769f_366x366.jpeg",
+    "title": "Піканте",
+    "types": [0, 1],
+    "sizes": [26, 30, 40],
+    "price": 130,
+    "category": 5,
+    "rating": 7
+  },
+  {
+    "id": 7,
+    "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/5630c6ed3f394c7ba25e1ef79a67b7ee_366x366.jpeg",
+    "title": "Теріякі",
+    "types": [0, 1],
+    "sizes": [30, 40],
+    "price": 120,
+    "category": 5,
+    "rating": 10
+  },
+  {
+    "id": 8,
+    "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/5bf1c77b3ff44f93bb01c840ab35b033_366x366.jpeg",
+    "title": "Американо",
+    "types": [1],
+    "sizes": [26, 30, 40],
+    "price": 99,
+    "category": 2,
+    "rating": 10
+  },
+  {
+    "id": 9,
+    "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/5bf1c77b3ff44f93bb01c840ab35b033_366x366.jpeg",
+    "title": "Баварська",
+    "types": [1],
+    "sizes": [26, 30, 40],
+    "price": 170,
+    "category": 1,
+    "rating": 10
+  },
+  {
+    "id": 10,
+    "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/5bf1c77b3ff44f93bb01c840ab35b033_366x366.jpeg",
+    "title": "Пепероні",
+    "types": [1],
+    "sizes": [26, 30, 40],
+    "price": 210,
+    "category": 3,
+    "rating": 8
+  },
+  {
+    "id": 11,
+    "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/5bf1c77b3ff44f93bb01c840ab35b033_366x366.jpeg",
+    "title": "Чотири сири",
+    "types": [1],
+    "sizes": [30, 40],
+    "price": 220,
+    "category": 1,
+    "rating": 6
+  },
+  {
+    "id": 12,
+    "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/5bf1c77b3ff44f93bb01c840ab35b033_366x366.jpeg",
+    "title": "Філадельфія",
+    "types": [1],
+    "sizes": [26, 30, 40],
+    "price": 150,
+    "category": 3,
+    "rating": 9
+  },
+  {
+    "id": 13,
+    "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/5bf1c77b3ff44f93bb01c840ab35b033_366x366.jpeg",
+    "title": "Морська",
+    "types": [1],
+    "sizes": [26, 30, 40],
+    "price": 270,
+    "category": 5,
+    "rating": 10
+  },
+  {
+    "id": 14,
+    "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/5bf1c77b3ff44f93bb01c840ab35b033_366x366.jpeg",
+    "title": "Піца з авокадо і лососем",
+    "types": [1],
+    "sizes": [30, 40],
+    "price": 320,
+    "category": 5,
+    "rating": 9
+  },
+  {
+    "id": 15,
+    "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/5bf1c77b3ff44f93bb01c840ab35b033_366x366.jpeg",
+    "title": "Кватро ді Карне",
+    "types": [1],
+    "sizes": [26, 30, 40],
+    "price": 140,
+    "category": 4,
+    "rating": 9
+  }
+]
