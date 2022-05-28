@@ -10,7 +10,7 @@ const Pagination = ({ onChangeSort }) => {
         breakLabel="..."
         nextLabel=">"
         onPageChange={(e) => onChangeSort(e.selected + 1)}
-        pageRangeDisplayed={3}
+        pageRangeDisplayed={8}
         pageCount={4}
         previousLabel="<"
         renderOnZeroPageCount={null}

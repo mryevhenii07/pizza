@@ -35,7 +35,7 @@ const Home = () => {
 
     axios
       .get(
-        `${API}?search=${searchValue}&${category}&sortBy=${sortType}&order=${order}&page=${currentPage}&limit=4`
+        `${API}?search=${searchValue}&${category}&sortBy=${sortType}&order=${order}&page=${currentPage}&limit=8`
       )
       .then((response) => {
         setItems(response.data);
@@ -57,7 +57,7 @@ const Home = () => {
       <h2 className="content__title">Всі піци</h2>
       <div className="content__items">
         {isLoading
-          ? [...new Array(4)].map((_, inx) => <Skeleton key={inx} />) //skeletonv
+          ? [...new Array(8)].map((_, inx) => <Skeleton key={inx} />) //skeletonv
           : items.map(({ title, price, imageUrl, sizes, types, id }) => (
               <PizzaBlock
                 key={id}
