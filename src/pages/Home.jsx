@@ -57,7 +57,7 @@ const Home = () => {
       <h2 className="content__title">Всі піци</h2>
       <div className="content__items">
         {isLoading
-          ? [...new Array(4)].map((_, inx) => <Skeleton key={inx} />) //skeleton
+          ? [...new Array(4)].map((_, inx) => <Skeleton key={inx} />) //skeletonv
           : items.map(({ title, price, imageUrl, sizes, types, id }) => (
               <PizzaBlock
                 key={id}
