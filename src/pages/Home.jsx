@@ -1,5 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import axios from "axios";
 import { SearchContext } from "../App.js";
 
 import { setCategoryId } from "../component/Redux/slices/filterSlice";
@@ -32,15 +33,14 @@ const Home = () => {
     const category = categoryId > 0 ? `category=${categoryId}` : "";
     const order = sortType === "rating" ? "desc" : "asc";
 
-    fetch(
-      `${API}?search=${searchValue}&${category}&sortBy=${sortType}&order=${order}&page=${currentPage}&limit=4`
-    )
-      .then((response) => response.json())
-      .then((json) => {
-        setItems(json);
+    axios
+      .get(
+        `${API}?search=${searchValue}&${category}&sortBy=${sortType}&order=${order}&page=${currentPage}&limit=4`
+      )
+      .then((response) => {
+        setItems(response.data);
         setIsLoading(false); //skeleton
-      })
-      .catch((error) => console.error(error));
+      });
     window.scrollTo(0, 0);
   }, [categoryId, sortType, searchValue, currentPage]); //skeleton pagination
 
@@ -54,7 +54,7 @@ const Home = () => {
         />
         <Sort />
       </div>
-      <h2 className="content__title">Всі піцacc</h2>
+      <h2 className="content__title">Всі піци</h2>
       <div className="content__items">
         {isLoading
           ? [...new Array(4)].map((_, inx) => <Skeleton key={inx} />) //skeletonv
