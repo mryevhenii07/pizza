@@ -28,8 +28,9 @@ const Home = () => {
   useEffect(() => {
     setIsLoading(true); //skeleton for category
     const API = "https://628f5e0d0e69410599db2da5.mockapi.io/items";
+
     const category = categoryId > 0 ? `category=${categoryId}` : "";
-    const order = sortType.includes("price") ? "asc" : "";
+    const order = sortType === "rating" ? "desc" : "asc";
 
     fetch(
       `${API}?search=${searchValue}&${category}&sortBy=${sortType}&order=${order}&page=${currentPage}&limit=4`
