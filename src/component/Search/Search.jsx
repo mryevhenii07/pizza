@@ -1,4 +1,5 @@
-/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable jsx-a11y/alt-text  */
+//cross-env PUBLIC_URL='/'
 import { useContext, useRef } from "react";
 import s from "./Search.module.scss";
 import { SearchContext } from "../../App.js";
