@@ -54,7 +54,7 @@ const Home = () => {
         />
         <Sort />
       </div>
-      <h2 className="content__title">Всі піци</h2>
+      <h2 className="content__title">Всі піцacc</h2>
       <div className="content__items">
         {isLoading
           ? [...new Array(4)].map((_, inx) => <Skeleton key={inx} />) //skeletonv
