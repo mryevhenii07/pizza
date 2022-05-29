@@ -12,9 +12,9 @@ function App() {
       <Header />
       <div className="content">
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/pizza" element={<Home />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/pizza" element={<Navigate to="/" replace />} />
+          <Route path="/" element={<Navigate to="/pizza" replace />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
