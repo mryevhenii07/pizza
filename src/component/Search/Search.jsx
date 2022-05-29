@@ -1,16 +1,31 @@
 /* eslint-disable jsx-a11y/alt-text  */
 //cross-env PUBLIC_URL='/'
-import { useContext, useRef } from "react";
+import debounce from "lodash.debounce";
+import { useContext, useRef, useCallback, useState } from "react";
 import s from "./Search.module.scss";
 import { SearchContext } from "../../App.js";
 
 const Search = () => {
-  const { searchValue, setSearchValue } = useContext(SearchContext);
+  const [value, setValue] = useState("");
+  const { setSearchValue } = useContext(SearchContext);
   const inputRef = useRef();
 
   const onClickClear = () => {
     setSearchValue("");
+    setValue("");
     inputRef.current.focus();
+  };
+
+  const updateSearchValue = useCallback(
+    debounce((str) => {
+      setSearchValue(str);
+    }, 1000),
+    []
+  );
+
+  const onChangeInput = (e) => {
+    setValue(e.target.value);
+    updateSearchValue(e.target.value);
   };
 
   return (
@@ -47,9 +62,10 @@ const Search = () => {
         />
       </svg>
       <input
+        type="text"
         ref={inputRef}
-        onChange={(e) => setSearchValue(e.target.value)}
-        value={searchValue}
+        onChange={onChangeInput}
+        value={value}
         className={s.input}
         placeholder="Пошук піци..."
       />
