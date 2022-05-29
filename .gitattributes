@@ -1,2 +1,2 @@
-*.min.css linguist-vendored=false
-*.min.js linguist-vendored=false
+* linguist-vendored
+*.js linguist-vendored=false
