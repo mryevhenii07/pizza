@@ -135,7 +135,7 @@ const Cart = () => {
               </button>
             </div>
             <div className="cart__item-price">
-              <b>675 ₽</b>
+              <b>675 </b>
             </div>
             <div className="cart__item-remove">
               <div className="button button--outline button--circle">
