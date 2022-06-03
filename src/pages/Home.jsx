@@ -62,15 +62,16 @@ const Home = () => {
       <div className="content__items">
         {isLoading
           ? [...new Array(8)].map((_, inx) => <Skeleton key={inx} />) //skeletonv
-          : items.map(({ title, price, imageUrl, sizes, types, id }) => (
+          : items.map((item) => (
               <PizzaBlock
-                key={id}
-                title={title}
-                price={price}
-                imageUrl={imageUrl}
-                sizes={sizes}
-                types={types}
-                id={id}
+                key={item.id}
+                title={item.title}
+                price={item.price}
+                imageUrl={item.imageUrl}
+                sizes={item.sizes}
+                types={item.types}
+                id={item.id}
+                item={item}
               />
             ))}
       </div>

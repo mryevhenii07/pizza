@@ -1,18 +1,28 @@
 import { useState } from "react";
 import { nanoid } from "nanoid";
+import { useDispatch, useSelector } from "react-redux";
+import { setItemInCart } from "../Redux/slices/cartSlice";
 
-const PizzaBlock = ({ title, price, imageUrl, sizes, types }) => {
+const PizzaBlock = ({ item }) => {
+  const [countPizza, seCountPizza] = useState(0);
   const [typeActive, setTypeActive] = useState(0);
   const [sizeActive, setSizeActive] = useState(0);
   const typeName = ["тонке", "традиційне"];
+
+  const despatch = useDispatch();
+
+  const handelClick = () => {
+    seCountPizza((prevState) => prevState + 1);
+    despatch(setItemInCart(item));
+  };
   return (
     <div className="pizza-block-wrap">
       <div className="pizza-block">
-        <img className="pizza-block__image" src={imageUrl} alt="Pizza" />
-        <h4 className="pizza-block__title">{title}</h4>
+        <img className="pizza-block__image" src={item.imageUrl} alt="Pizza" />
+        <h4 className="pizza-block__title">{item.title}</h4>
         <div className="pizza-block__selector">
           <ul>
-            {types.map((type) => (
+            {item.types.map((type) => (
               <li
                 key={nanoid()}
                 onClick={() => setTypeActive(type)}
@@ -23,7 +33,7 @@ const PizzaBlock = ({ title, price, imageUrl, sizes, types }) => {
             ))}
           </ul>
           <ul>
-            {sizes.map((size, inx) => (
+            {item.sizes.map((size, inx) => (
               <li
                 key={nanoid()}
                 onClick={() => setSizeActive(inx)}
@@ -35,8 +45,11 @@ const PizzaBlock = ({ title, price, imageUrl, sizes, types }) => {
           </ul>
         </div>
         <div className="pizza-block__bottom">
-          <div className="pizza-block__price">від {price}₴ </div>
-          <button className="button button--outline button--add">
+          <div className="pizza-block__price">від {item.price}₴ </div>
+          <button
+            className="button button--outline button--add"
+            onClick={handelClick}
+          >
             <svg
               width="12"
               height="12"
@@ -50,7 +63,7 @@ const PizzaBlock = ({ title, price, imageUrl, sizes, types }) => {
               />
             </svg>
             <span>Додати</span>
-            <i>0</i>
+            <i>{countPizza}</i>
           </button>
         </div>
       </div>
