@@ -1,10 +1,18 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Cart = () => {
   const cartItem = useSelector((state) => state.cart.itemsInCart);
   const totalPrice = cartItem.reduce((acc, pizza) => (acc += pizza.price), 0);
-  console.log(totalPrice);
+
+  const [item, setItem] = useState(cartItem);
+  console.log(item);
+
+  const removeItemPizza = (id) => {
+    setItem(item.filter((piz) => piz.id !== id));
+    console.log("kj");
+  };
 
   return (
     <div className="container container--cart">
@@ -82,7 +90,7 @@ const Cart = () => {
             <span>Очистити кошик</span>
           </div>
         </div>
-        {cartItem.map((pizza) => (
+        {item.map((pizza) => (
           <div className="content__items" key={pizza.id}>
             <div className="cart__item">
               <div className="cart__item-img">
@@ -143,7 +151,10 @@ const Cart = () => {
                 <b>{pizza.price}₴ </b>
               </div>
               <div className="cart__item-remove">
-                <div className="button button--outline button--circle">
+                <div
+                  className="button button--outline button--circle"
+                  onClick={() => removeItemPizza(pizza.id)}
+                >
                   <svg
                     width="10"
                     height="10"
