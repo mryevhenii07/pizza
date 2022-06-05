@@ -4,10 +4,13 @@ import { useState } from "react";
 
 const Cart = () => {
   const cartItem = useSelector((state) => state.cart.itemsInCart);
+
   const totalPrice = cartItem.reduce((acc, pizza) => (acc += pizza.price), 0);
 
   const [item, setItem] = useState(cartItem);
-  console.log(item);
+  const clearCartPizzas = () => {
+    setItem([]);
+  };
 
   const removeItemPizza = (id) => {
     setItem(item.filter((piz) => piz.id !== id));
@@ -50,7 +53,7 @@ const Cart = () => {
             </svg>
             Кошик
           </h2>
-          <div className="cart__clear">
+          <div className="cart__clear" onClick={clearCartPizzas}>
             <svg
               width="20"
               height="20"

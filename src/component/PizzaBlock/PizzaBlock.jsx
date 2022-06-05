@@ -12,7 +12,7 @@ const PizzaBlock = ({ item }) => {
   const despatch = useDispatch();
 
   const handelClick = () => {
-    seCountPizza((prevState) => prevState + 1);
+    seCountPizza(1);
     despatch(setItemInCart(item));
   };
   return (
