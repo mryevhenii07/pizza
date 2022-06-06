@@ -1,0 +1,20 @@
+.cart {
+  text-align: center;
+  .paragraph {
+    margin-top: 30px;
+  }
+  .img {
+    margin-top: 40px;
+    width: 450px;
+  }
+  .wrapBtn {
+    margin-top: 50px;
+    .btn {
+      padding: 13px 18px;
+      background-color: #fe5f1e;
+      border-radius: 25px;
+      font-size: 18px;
+      color: white;
+    }
+  }
+}

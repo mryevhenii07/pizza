@@ -5,9 +5,11 @@ import logo from "../assets/images/pizza-logo2x.png";
 import Search from "./Search/Search";
 
 const Header = () => {
-  const items = useSelector((state) => state.cart.itemsInCart);
-  console.log(items);
-  const totalPrice = items.reduce((acc, el) => (acc += el.price), 0);
+  const { items, totalPrice } = useSelector((state) => state.cart);
+  const totalCount = items.reduce((acc, item) => acc + item.count, 0);
+
+  // console.log(items);
+  // const totalPrice = items.reduce((acc, el) => (acc += el.price), 0);
 
   return (
     <div className="header">
@@ -56,7 +58,7 @@ const Header = () => {
                   strokeLinejoin="round"
                 />
               </svg>
-              <span>{items.length}</span>
+              <span>{totalCount}</span>
             </Link>
           </div>
         </div>

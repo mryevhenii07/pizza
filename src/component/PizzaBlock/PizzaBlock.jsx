@@ -1,28 +1,40 @@
 import { useState } from "react";
 import { nanoid } from "nanoid";
 import { useDispatch, useSelector } from "react-redux";
-import { setItemInCart } from "../Redux/slices/cartSlice";
+import { addItems } from "../Redux/slices/cartSlice";
 
-const PizzaBlock = ({ item }) => {
-  const [countPizza, seCountPizza] = useState(0);
+const typeName = ["тонке", "традиційне"];
+
+const PizzaBlock = ({ id, title, price, imageUrl, sizes, types, rating }) => {
+  const dispatch = useDispatch();
+  const cartItem = useSelector((state) =>
+    state.cart.items.find((obj) => obj.id === id)
+  );
   const [typeActive, setTypeActive] = useState(0);
   const [sizeActive, setSizeActive] = useState(0);
-  const typeName = ["тонке", "традиційне"];
 
-  const despatch = useDispatch();
+  const addCount = cartItem ? cartItem.count : 0;
 
-  const handelClick = () => {
-    seCountPizza(1);
-    despatch(setItemInCart(item));
+  const onClickAdd = () => {
+    const items = {
+      id,
+      title,
+      price,
+      imageUrl,
+      type: typeName[typeActive],
+      size: sizeActive,
+    };
+    dispatch(addItems(items));
   };
+
   return (
     <div className="pizza-block-wrap">
       <div className="pizza-block">
-        <img className="pizza-block__image" src={item.imageUrl} alt="Pizza" />
-        <h4 className="pizza-block__title">{item.title}</h4>
+        <img className="pizza-block__image" src={imageUrl} alt="Pizza" />
+        <h4 className="pizza-block__title">{title}</h4>
         <div className="pizza-block__selector">
           <ul>
-            {item.types.map((type) => (
+            {types.map((type) => (
               <li
                 key={nanoid()}
                 onClick={() => setTypeActive(type)}
@@ -33,7 +45,7 @@ const PizzaBlock = ({ item }) => {
             ))}
           </ul>
           <ul>
-            {item.sizes.map((size, inx) => (
+            {sizes.map((size, inx) => (
               <li
                 key={nanoid()}
                 onClick={() => setSizeActive(inx)}
@@ -45,10 +57,10 @@ const PizzaBlock = ({ item }) => {
           </ul>
         </div>
         <div className="pizza-block__bottom">
-          <div className="pizza-block__price">від {item.price}₴ </div>
+          <div className="pizza-block__price">від {price}₴ </div>
           <button
             className="button button--outline button--add"
-            onClick={handelClick}
+            onClick={onClickAdd}
           >
             <svg
               width="12"
@@ -63,7 +75,7 @@ const PizzaBlock = ({ item }) => {
               />
             </svg>
             <span>Додати</span>
-            <i>{countPizza}</i>
+            {addCount > 0 && <i>{addCount}</i>}
           </button>
         </div>
       </div>

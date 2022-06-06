@@ -7,7 +7,6 @@ import { useNavigate } from "react-router-dom";
 import {
   setCategoryId,
   setCurrentPage,
-  setFilters,
 } from "../component/Redux/slices/filterSlice";
 import Categories from "../component/Categories";
 import Sort from "../component/Sort";
@@ -77,18 +76,20 @@ const Home = () => {
       <div className="content__items">
         {isLoading
           ? [...new Array(8)].map((_, inx) => <Skeleton key={inx} />) //skeletonv
-          : items.map((item) => (
-              <PizzaBlock
-                key={item.id}
-                title={item.title}
-                price={item.price}
-                imageUrl={item.imageUrl}
-                sizes={item.sizes}
-                types={item.types}
-                id={item.id}
-                item={item}
-              />
-            ))}
+          : items.map(
+              ({ id, title, price, imageUrl, sizes, types, rating }) => (
+                <PizzaBlock
+                  key={id}
+                  title={title}
+                  price={price}
+                  imageUrl={imageUrl}
+                  sizes={sizes}
+                  types={types}
+                  id={id}
+                  rating={rating}
+                />
+              )
+            )}
       </div>
       <Pagination currentPage={currentPage} onChangeSort={onChangePage} />
     </div>
