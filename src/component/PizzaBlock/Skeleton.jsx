@@ -11,7 +11,7 @@ const Skeleton = (props) => (
     foregroundColor="#c7c6c6"
     {...props}
   >
-    <circle cx="137" cy="115" r="120" />
+    <circle cx="137" cy="135" r="120" />
     <rect x="1" y="287" rx="10" ry="10" width="280" height="27" />
     <rect x="0" y="334" rx="10" ry="10" width="280" height="88" />
     <rect x="65" y="352" rx="0" ry="0" width="2" height="0" />

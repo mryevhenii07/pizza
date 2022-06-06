@@ -3,7 +3,7 @@ import { nanoid } from "nanoid";
 import { useDispatch, useSelector } from "react-redux";
 import { addItems } from "../Redux/slices/cartSlice";
 
-const typeName = ["тонке", "традиційне"];
+const typeName = ["тонка", "традиційна"];
 
 const PizzaBlock = ({ id, title, price, imageUrl, sizes, types, rating }) => {
   const dispatch = useDispatch();
