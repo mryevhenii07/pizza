@@ -1,28 +1,37 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { nanoid } from "nanoid";
 import { useSelector, useDispatch } from "react-redux";
 
 import { setSort } from "../component/Redux/slices/filterSlice";
-
+export const lists = [
+  { name: "популярності", sortProperty: "rating" },
+  { name: "ціной", sortProperty: "price" },
+  { name: "алфавітом", sortProperty: "title" },
+];
 const Sort = () => {
   const [open, setOpen] = useState(false);
 
   const dispatch = useDispatch();
   const sort = useSelector((state) => state.filter.sort);
-
-  const lists = [
-    { name: "популярності", sortProperty: "rating" },
-    { name: "ціной", sortProperty: "price" },
-    { name: "алфавітом", sortProperty: "title" },
-  ];
-
+  const sortRef = useRef();
   const onClickListItem = (list) => {
     dispatch(setSort(list));
     setOpen(false);
   };
+  useEffect(() => {
+    const handelClickOutside = (e) => {
+      if (!e.path.includes(sortRef.current)) {
+        setOpen(false);
+      }
+    };
 
+    document.body.addEventListener("click", handelClickOutside);
+    return () => {
+      document.body.removeEventListener("click", handelClickOutside);
+    };
+  }, []);
   return (
-    <div className="sort">
+    <div className="sort" ref={sortRef}>
       <div className="sort__label">
         <svg
           width="10"
