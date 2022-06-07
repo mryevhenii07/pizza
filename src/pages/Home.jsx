@@ -31,21 +31,26 @@ const Home = () => {
     dispatch(setCategoryId(id));
   };
 
-  const getPizza = () => {
+  const getPizza = async () => {
     setIsLoading(true); //skeleton for category
     const API = "https://628f5e0d0e69410599db2da5.mockapi.io/items";
     const category = categoryId > 0 ? `category=${categoryId}` : "";
     const order = sortType === "rating" ? "desc" : "asc";
 
-    axios
-      .get(
-        `${API}?search=${searchInput}&${category}&sortBy=${sortType}&order=${order}&page=${currentPage}&limit=8`
-      )
-      .then((response) => {
-        setItems(response.data);
-        setIsLoading(false); //skeleton
-      });
+    const { data } = await axios.get(
+      `${API}?search=${searchInput}&${category}&sortBy=${sortType}&order=${order}&page=${currentPage}&limit=8`
+    );
+    setItems(data);
+    setIsLoading(false); //skeleton
     window.scrollTo(0, 0);
+    // await axios
+    //   .get(
+    //     `${API}?search=${searchInput}&${category}&sortBy=${sortType}&order=${order}&page=${currentPage}&limit=8`,
+    //   )
+    //   .then((response) => {
+    //     setItems(response.data);
+    //     setIsLoading(false); //skeleton
+    //   });
   };
 
   useEffect(() => getPizza(), [categoryId, sortType, searchInput, currentPage]); //skeleton pagination
