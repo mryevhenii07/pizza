@@ -37,20 +37,17 @@ const Home = () => {
     const category = categoryId > 0 ? `category=${categoryId}` : "";
     const order = sortType === "rating" ? "desc" : "asc";
 
-    const { data } = await axios.get(
-      `${API}?search=${searchInput}&${category}&sortBy=${sortType}&order=${order}&page=${currentPage}&limit=8`
-    );
-    setItems(data);
-    setIsLoading(false); //skeleton
+    try {
+      const { data } = await axios.get(
+        `${API}?search=${searchInput}&${category}&sortBy=${sortType}&order=${order}&page=${currentPage}&limit=8`
+      );
+      setItems(data);
+    } catch (error) {
+      console.log("BLYAAA", error);
+    } finally {
+      setIsLoading(false);
+    }
     window.scrollTo(0, 0);
-    // await axios
-    //   .get(
-    //     `${API}?search=${searchInput}&${category}&sortBy=${sortType}&order=${order}&page=${currentPage}&limit=8`,
-    //   )
-    //   .then((response) => {
-    //     setItems(response.data);
-    //     setIsLoading(false); //skeleton
-    //   });
   };
 
   useEffect(() => getPizza(), [categoryId, sortType, searchInput, currentPage]); //skeleton pagination
