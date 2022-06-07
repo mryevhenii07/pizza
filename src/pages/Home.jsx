@@ -13,7 +13,6 @@ import Sort from "../component/Sort";
 import PizzaBlock from "../component/PizzaBlock/PizzaBlock";
 import Skeleton from "../component/PizzaBlock/Skeleton";
 import Pagination from "../component/Pagination/Pagination";
-// import { lists } from '../component/Sort';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -32,7 +31,7 @@ const Home = () => {
     dispatch(setCategoryId(id));
   };
 
-  useEffect(() => {
+  const getPizza = () => {
     setIsLoading(true); //skeleton for category
     const API = "https://628f5e0d0e69410599db2da5.mockapi.io/items";
     const category = categoryId > 0 ? `category=${categoryId}` : "";
@@ -47,8 +46,9 @@ const Home = () => {
         setIsLoading(false); //skeleton
       });
     window.scrollTo(0, 0);
-  }, [categoryId, sortType, searchInput, currentPage]); //skeleton pagination
+  };
 
+  useEffect(() => getPizza(), [categoryId, sortType, searchInput, currentPage]); //skeleton pagination
   useEffect(() => {
     const queryString = qs.stringify({
       sortType,
