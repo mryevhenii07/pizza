@@ -13,11 +13,12 @@ import Sort from "../component/Sort";
 import PizzaBlock from "../component/PizzaBlock/PizzaBlock";
 import Skeleton from "../component/PizzaBlock/Skeleton";
 import Pagination from "../component/Pagination/Pagination";
+import { setItems } from "../component/Redux/slices/pizzaSlice";
 
 const Home = () => {
   const navigate = useNavigate();
 
-  const [items, setItems] = useState([]);
+  // const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState(true); //skeleton
 
   const dispatch = useDispatch();
@@ -26,6 +27,7 @@ const Home = () => {
   const categoryId = useSelector((state) => state.filter.categoryId);
   const currentPage = useSelector((state) => state.filter.currentPage);
   const searchInput = useSelector((state) => state.filter.searchInput);
+  const items = useSelector((state) => state.pizza.items);
 
   const onClickCategories = (id) => {
     dispatch(setCategoryId(id));
@@ -41,7 +43,7 @@ const Home = () => {
       const { data } = await axios.get(
         `${API}?search=${searchInput}&${category}&sortBy=${sortType}&order=${order}&page=${currentPage}&limit=8`
       );
-      setItems(data);
+      dispatch(setItems(data));
     } catch (error) {
       console.log("BLYAAA", error);
     } finally {
