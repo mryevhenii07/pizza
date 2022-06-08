@@ -14,7 +14,7 @@ const CartEmpty = () => {
         </p>
         <img src={cart} alt="cart-empty" className={s.img} />
         <div className={s.wrapBtn}>
-          <Link to="/" className={s.btn}>
+          <Link to="/pizza" className={s.btn}>
             Повернуться назад
           </Link>
         </div>

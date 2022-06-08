@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import axios from "axios";
+import { TailSpin } from "react-loader-spinner";
+
+import s from "./FullPizza.module.scss";
 
 const FullPizza = () => {
   const [pizza, setPizza] = useState();
@@ -20,19 +23,20 @@ const FullPizza = () => {
     };
     fetchPizza();
   }, []);
-
-  if (!pizza) {
-    return "...Loading";
-  }
   return (
-    <div>
-      <img src={pizza.imageUrl} alt="" />
-      <h1>{pizza.title}</h1>
-      <h2>{pizza.price}</h2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis esse iste
-        deserunt dicta quis ad odio distinctio repellat repellendus nostrum.
-      </p>
+    <div className={s.wrapperModal}>
+      {!pizza ? (
+        <TailSpin color="#fe5f1e" height={180} width={180} />
+      ) : (
+        <>
+          <img src={pizza.imageUrl} alt="imag pizza" className={s.img} />
+          <h2 className={s.title}>{pizza.title}</h2>
+          <p>{pizza.info}</p>
+          <Link to={"/pizza"}>
+            <button className={s.btn}>Назад </button>
+          </Link>
+        </>
+      )}
     </div>
   );
 };

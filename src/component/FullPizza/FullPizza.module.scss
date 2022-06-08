@@ -1,0 +1,38 @@
+.wrapperModal {
+  padding: 15px;
+  margin: 50px auto;
+  width: 500px;
+  border-radius: 20px;
+
+  overflow: hidden;
+}
+.img {
+  width: 300px;
+  display: flex;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.btn {
+  margin: 30px auto;
+  display: flex;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border: 1px solid orange;
+  outline: none;
+  background-color: #fff;
+}
+.btn:hover {
+  background-color: black;
+  border: none;
+  color: #fff;
+}
