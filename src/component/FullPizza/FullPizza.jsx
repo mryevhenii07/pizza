@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { TailSpin } from "react-loader-spinner";
 
 import s from "./FullPizza.module.scss";
 
 const FullPizza = () => {
+  const navigate = useNavigate();
   const [pizza, setPizza] = useState();
   const { pizzaId } = useParams();
 
@@ -18,7 +19,8 @@ const FullPizza = () => {
         setPizza(data);
         console.log(data.price);
       } catch (error) {
-        alert("error");
+        alert("На головну!!!");
+        navigate("/pizza");
       }
     };
     fetchPizza();
