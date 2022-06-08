@@ -13,7 +13,7 @@ function App() {
       <Header />
       <div className="content">
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/pizza" element={<Home />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/pizzas/:pizzaId" element={<FullPizza />} />
           <Route path="/" element={<Navigate to="/pizza" replace />} />
