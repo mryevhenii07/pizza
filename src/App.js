@@ -5,6 +5,7 @@ import Header from "./component/Header";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import Cart from "./pages/Cart";
+import FullPizza from "./component/FullPizza/FullPizza";
 
 function App() {
   return (
@@ -12,8 +13,9 @@ function App() {
       <Header />
       <div className="content">
         <Routes>
-          <Route path="/pizza" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/pizzas/:pizzaId" element={<FullPizza />} />
           <Route path="/" element={<Navigate to="/pizza" replace />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
