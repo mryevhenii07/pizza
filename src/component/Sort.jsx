@@ -31,7 +31,7 @@ const Sort = () => {
     };
   }, []);
   return (
-    <div className="sort" ref={sortRef}>
+    <div className="sort animate__animated animate__slideInRight" ref={sortRef}>
       <div className="sort__label">
         <svg
           width="10"

@@ -1,5 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
+import "animate.css";
 
 import logo from "../assets/images/pizza-logo2x.png";
 import Search from "./Search/Search";
@@ -14,7 +15,13 @@ const Header = () => {
       <div className="container">
         <Link to="/pizza">
           <div className="header__logo">
-            <img width="40" height="40" src={logo} alt="Pizza logo" />
+            <img
+              width="40"
+              height="40"
+              src={logo}
+              alt="Pizza logo"
+              className="animate__animated animate__bounce"
+            />
             <div>
               <h1>Pizza</h1>
               <p className="paragraf-logo">найсмачніша піца у всесвіті</p>
@@ -23,7 +30,7 @@ const Header = () => {
         </Link>
         <Search />
         {location.pathname !== "/cart" ? (
-          <div className="header__cart_wrap">
+          <div className="header__cart_wrap animate__animated animate__bounce">
             <div className="header__cart">
               <Link to="/cart" className="button button--cart">
                 <span>{totalPrice}₴</span>

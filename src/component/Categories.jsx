@@ -12,7 +12,7 @@ const Categories = ({ value, onClickCategories }) => {
 
   return (
     <div className="categories">
-      <ul>
+      <ul className="animate__animated animate__slideInLeft">
         {categoryId.map((category, index) => (
           <li
             key={nanoid()}
