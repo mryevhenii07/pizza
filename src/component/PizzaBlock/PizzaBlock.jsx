@@ -62,6 +62,7 @@ const PizzaBlock = ({ id, title, price, imageUrl, sizes, types, rating }) => {
         </div>
         <div className="pizza-block__bottom">
           <div className="pizza-block__price">від {price}₴ </div>
+
           <button
             className="button button--outline button--add"
             onClick={onClickAdd}

@@ -8,7 +8,7 @@ export const fetchPizzas = createAsyncThunk(
     const { data } = await axios.get(
       `${API}?search=${searchInput}&${category}&sortBy=${sortType}&order=${order}&page=${currentPage}&limit=8`
     );
-    console.log(thunkAPI);
+
     return data;
   }
 );

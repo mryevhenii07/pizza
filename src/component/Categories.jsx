@@ -1,4 +1,5 @@
 import { nanoid } from "nanoid";
+import s from "./Categories.module.css";
 
 const Categories = ({ value, onClickCategories }) => {
   const categoryId = [
@@ -11,7 +12,7 @@ const Categories = ({ value, onClickCategories }) => {
   ];
 
   return (
-    <div className="categories">
+    <nav className="categories">
       <ul className="animate__animated animate__slideInLeft">
         {categoryId.map((category, index) => (
           <li
@@ -20,10 +21,14 @@ const Categories = ({ value, onClickCategories }) => {
             className={value === index ? "active" : ""}
           >
             {category}
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
           </li>
         ))}
       </ul>
-    </div>
+    </nav>
   );
 };
 
