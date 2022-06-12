@@ -1,5 +1,5 @@
 import { nanoid } from "nanoid";
-import s from "./Categories.module.css";
+import s from "./Categories.module.scss";
 
 const Categories = ({ value, onClickCategories }) => {
   const categoryId = [

@@ -1,8 +1,4 @@
-import {
-  addItems,
-  minusItem,
-  removeItems,
-} from "component/Redux/slices/cartSlice";
+import { addItems, minusItem, removeItems } from "../../store/slices/cartSlice";
 import React from "react";
 import { useDispatch } from "react-redux";
 

@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { nanoid } from "nanoid";
 import { useSelector, useDispatch } from "react-redux";
 
-import { setSort } from "../component/Redux/slices/filterSlice";
+import { setSort } from "../store/slices/filterSlice";
 export const lists = [
   { name: "популярності", sortProperty: "rating" },
   { name: "ціной", sortProperty: "price" },

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { nanoid } from "nanoid";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { addItems } from "../Redux/slices/cartSlice";
+import { addItems } from "../../store/slices/cartSlice";
 
 const typeName = ["тонка", "традиційна"];
 
