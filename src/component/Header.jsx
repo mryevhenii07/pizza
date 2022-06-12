@@ -4,6 +4,7 @@ import "animate.css";
 
 import logo from "../assets/images/pizza-logo2x.png";
 import Search from "./Search/Search";
+import s from "./Header.module.scss";
 
 const Header = () => {
   const { items, totalPrice } = useSelector((state) => state.cart);
@@ -69,7 +70,7 @@ const Header = () => {
             </div>
           </div>
         ) : (
-          ""
+          <p className={s.animePharag}>русский военный корабль иди на х$й!</p>
         )}
       </div>
     </div>
