@@ -2,8 +2,8 @@ import { Link, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import "animate.css";
 
-import logo from "../assets/images/pizza-logo2x.png";
-import Search from "./Search/Search";
+import logo from "../../assets/images/pizza-logo2x.png";
+import Search from "../Search/Search";
 import s from "./Header.module.scss";
 
 const Header = () => {
@@ -70,7 +70,7 @@ const Header = () => {
             </div>
           </div>
         ) : (
-          <p className={s.animePharag}>русский военный корабль иди на х$й!</p>
+          <p className={s.animeParag}>русский военный корабль иди на х$й!</p>
         )}
       </div>
     </div>
