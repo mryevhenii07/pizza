@@ -178,7 +178,9 @@ body {
       align-items: center;
       justify-content: space-between;
       width: 13%;
-
+      @media (max-width: 768px) {
+        width: 20%;
+      }
       &-minus {
         svg {
           path:first-of-type {
