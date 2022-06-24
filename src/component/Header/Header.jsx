@@ -8,8 +8,9 @@ import s from "./Header.module.scss";
 
 const Header = () => {
   const { items, totalPrice } = useSelector((state) => state.cart);
-  const totalCount = items.reduce((acc, item) => acc + item.count, 0);
   const location = useLocation();
+
+  const totalCount = items.reduce((acc, item) => acc + item.count, 0);
 
   return (
     <div className="header">
@@ -70,7 +71,7 @@ const Header = () => {
             </div>
           </div>
         ) : (
-          <p className={s.animeParag}>русский военный корабль иди на х$й!</p>
+          <p className={s.animeParag}>русский военный корабль иди на х$й!!!</p>
         )}
       </div>
     </div>
