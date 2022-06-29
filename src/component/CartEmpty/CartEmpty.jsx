@@ -1,6 +1,7 @@
 import React from "react";
-import cart from "../../assets/images/vector.png";
 import { Link } from "react-router-dom";
+
+import cart from "../../assets/images/vector.png";
 import s from "./CartEmpty.module.scss";
 
 const CartEmpty = () => {
