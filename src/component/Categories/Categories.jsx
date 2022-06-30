@@ -1,4 +1,5 @@
 import { nanoid } from "nanoid";
+import "./Categories.module.scss";
 
 const Categories = ({ value, onClickCategories }) => {
   const categoryId = [

@@ -1,6 +1,7 @@
 import { clearItems } from "../store/slices/cartSlice";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import "animate.css";
 
 import CartEmpty from "component/CartEmpty/CartEmpty";
 import CartItem from "../component/CartItem/CartItem";
@@ -25,6 +26,7 @@ const Cart = () => {
         <div className="cart__top">
           <h2 className="content__title">
             <svg
+              class="animate__animated animate__backInLeft"
               width="18"
               height="18"
               viewBox="0 0 18 18"
