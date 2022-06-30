@@ -1,13 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
 import s from "./NotFoundBlock.module.scss";
 
 const NotFoundBlock = () => {
   return (
-    // <div className={s.wrap}>
-    //   <span className={s.span}>😒</span>
-    //   <h1> NotFoundBlock</h1>
-    // </div>
     <div className={s.container}>
       <div className={s.context}>
         <h2>404</h2>

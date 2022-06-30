@@ -1,5 +1,6 @@
 import React from "react";
 import ReactPaginate from "react-paginate";
+
 import s from "./Pagination.module.scss";
 
 const Pagination = ({ currentPage, onChangeSort }) => {

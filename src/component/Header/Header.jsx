@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
-import "animate.css";
 
+import "animate.css";
 import logo from "../../assets/images/pizza-logo2x.png";
 import Search from "../Search/Search";
 import s from "./Header.module.scss";

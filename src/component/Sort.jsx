@@ -3,11 +3,13 @@ import { nanoid } from "nanoid";
 import { useSelector, useDispatch } from "react-redux";
 
 import { setSort } from "../store/slices/filterSlice";
+
 export const lists = [
   { name: "популярності", sortProperty: "rating" },
   { name: "ціной", sortProperty: "price" },
   { name: "алфавітом", sortProperty: "title" },
 ];
+
 const Sort = () => {
   const [open, setOpen] = useState(false);
 
