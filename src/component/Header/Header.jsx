@@ -26,7 +26,7 @@ const Header = () => {
             />
             <div>
               <h1>Pizza</h1>
-              <p className="paragraf-logo">найсмачніша піца у всесвіті!</p>
+              <p className="paragraf-logo">найсмачніша піца у всесвіті!!!</p>
             </div>
           </div>
         </Link>
