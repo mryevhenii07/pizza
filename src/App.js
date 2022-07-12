@@ -6,21 +6,29 @@ import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import Cart from "./pages/Cart";
 import FullPizza from "./component/FullPizza/FullPizza";
+import Registration from "./component/Form/Registration/Registration";
 
 function App() {
+  const isLoginOk = true;
   return (
-    <div className="wrapper">
-      <Header />
-      <div className="content">
-        <Routes>
-          <Route path="/pizza" element={<Home />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/pizzas/:pizzaId" element={<FullPizza />} />
-          <Route path="/" element={<Navigate to="/pizza" replace />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </div>
-    </div>
+    <>
+      {!isLoginOk ? (
+        <Registration />
+      ) : (
+        <div className="wrapper">
+          <Header />
+          <div className="content">
+            <Routes>
+              <Route path="/pizza" element={<Home />} />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/pizzas/:pizzaId" element={<FullPizza />} />
+              <Route path="/" element={<Navigate to="/pizza" replace />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </div>
+        </div>
+      )}
+    </>
   );
 }
 

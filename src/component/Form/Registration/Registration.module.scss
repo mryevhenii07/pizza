@@ -1,0 +1,66 @@
+.form {
+  margin: 100px auto;
+  width: 500px;
+  min-height: 400px;
+  background-color: rgb(244, 238, 238);
+  border-radius: 20px;
+  padding: 40px;
+}
+.title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.input {
+  padding: 10px;
+  margin: 0 auto;
+
+  border-radius: 8px;
+  border: none;
+  width: 350px;
+  height: 50px;
+  background-color: rgb(215, 210, 210);
+}
+.errors {
+  height: 20px;
+  margin: 5px 10px 10px 10px;
+}
+.textError {
+  font-size: 10px;
+  color: red;
+}
+
+.wrapCheckbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkBox {
+  margin-right: 10px;
+}
+.service {
+  font-weight: bold;
+}
+
+.btn {
+  cursor: pointer;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 20px;
+  width: 350px;
+  height: 50px;
+  background-color: rgb(93, 128, 187);
+  border-radius: 8px;
+  border: none;
+}
+.already {
+  margin-top: 60px;
+  text-align: center;
+}
+.loginHere {
+  font-weight: bold;
+}
